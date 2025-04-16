@@ -1,15 +1,14 @@
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-const firebaseConfig = {
-  apiKey: "AIzaSyB6xt_6hNSjrVImxCmtzEY3rIjifWGuyhM",
-  authDomain: "contact-book-b9f60.firebaseapp.com",
-  projectId: "contact-book-b9f60",
-  storageBucket: "contact-book-b9f60.firebasestorage.app",
-  messagingSenderId: "836029311958",
-  appId: "1:836029311958:web:57a2aebee6baf2989ad277"
-};
 
+const firebaseConfig = {
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
+};
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
